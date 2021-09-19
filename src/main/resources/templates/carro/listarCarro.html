@@ -13,14 +13,14 @@
 </head>
 
 <meta charset="UTF-8">
-<title>Listagem de Aluno</title>
+<title>Listagem de Carros</title>
 
 <body>
 
 	<div class="container">
 		<div class="panel-default">
 			<div class="text-center">
-				<h1 class="h4 mb-4">Listagem de Alunos:</h1>
+				<h1 class="h4 mb-4">Listagem de Carros:</h1>
 			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
@@ -28,18 +28,20 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Nome</th>
+								<th>Modelo</th>
+								<th>Chave</th>
 								<th></th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="aluno : ${alunos}">
-								<td th:text="${aluno.id}"></td>
-								<td th:text="${aluno.nome}"></td>
+							<tr th:each="carro : ${carros}">
+								<td th:text="${carro.id}"></td>
+								<td th:text="${carro.modelo}"></td>
+								<td th:text="${carro.chave.codigo}"></td>
 								<td>
 									<div class="btn-group pull-right">
-										<a class="btn btn-sm btn-primary" th:href="@{/aluno/alterar/{idAluno}(idAluno=${aluno.id})}">Alterar</a>
-										<a class="btn btn-sm btn-danger" th:href="@{/aluno/excluir/{idAluno}(idAluno=${aluno.id})}">Excluir</a>
+										<a class="btn btn-sm btn-primary" th:href="@{/carro/alterar/{idCarro}(idCarro=${carro.id})}">Alterar</a>
+										<a class="btn btn-sm btn-danger" th:href="@{/carro/excluir/{idCarro}(idCarro=${carro.id})}">Excluir</a>
 									</div>
 								</td>
 							</tr>
@@ -48,7 +50,7 @@
 				</div>
 			</div>
 		</div>
-		<a class="btn btn-sm btn-success" th:href="@{/aluno/cadastrar}">Cadastrar</a>
+		<a class="btn btn-sm btn-success" th:href="@{/carro/cadastrar}">Cadastrar</a>
 	</div>
 
 </body>

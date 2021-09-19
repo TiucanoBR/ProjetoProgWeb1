@@ -13,14 +13,14 @@
 </head>
 
 <meta charset="UTF-8">
-<title>Listagem de Aluno</title>
+<title>Listagem de Documentos</title>
 
 <body>
 
 	<div class="container">
 		<div class="panel-default">
 			<div class="text-center">
-				<h1 class="h4 mb-4">Listagem de Alunos:</h1>
+				<h1 class="h4 mb-4">Listagem de Documentos:</h1>
 			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
@@ -29,17 +29,19 @@
 							<tr>
 								<th>ID</th>
 								<th>Nome</th>
+								<th>Código</th>
 								<th></th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="aluno : ${alunos}">
-								<td th:text="${aluno.id}"></td>
-								<td th:text="${aluno.nome}"></td>
+							<tr th:each="documento : ${documentos}">
+								<td th:text="${documento.id}"></td>
+								<td th:text="${documento.nome}"></td>
+								<td th:text="${documento.codigo}"></td>
 								<td>
 									<div class="btn-group pull-right">
-										<a class="btn btn-sm btn-primary" th:href="@{/aluno/alterar/{idAluno}(idAluno=${aluno.id})}">Alterar</a>
-										<a class="btn btn-sm btn-danger" th:href="@{/aluno/excluir/{idAluno}(idAluno=${aluno.id})}">Excluir</a>
+										<a class="btn btn-sm btn-primary" th:href="@{/doc/alterar/{idDoc}(idDoc=${documento.id})}">Alterar</a>
+										<a class="btn btn-sm btn-danger" th:href="@{/doc/excluir/{idDoc}(idDoc=${documento.id})}">Excluir</a>
 									</div>
 								</td>
 							</tr>
@@ -48,7 +50,7 @@
 				</div>
 			</div>
 		</div>
-		<a class="btn btn-sm btn-success" th:href="@{/aluno/cadastrar}">Cadastrar</a>
+		<a class="btn btn-sm btn-success" th:href="@{/doc/cadastrar}">Cadastrar</a>
 	</div>
 
 </body>

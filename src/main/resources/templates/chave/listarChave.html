@@ -13,14 +13,14 @@
 </head>
 
 <meta charset="UTF-8">
-<title>Listagem de Aluno</title>
+<title>Listagem de Chave</title>
 
 <body>
 
 	<div class="container">
 		<div class="panel-default">
 			<div class="text-center">
-				<h1 class="h4 mb-4">Listagem de Alunos:</h1>
+				<h1 class="h4 mb-4">Listagem de Chaves:</h1>
 			</div>
 			<div class="panel-body">
 				<div class="table-responsive">
@@ -28,18 +28,18 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>Nome</th>
+								<th>Código</th>
 								<th></th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="aluno : ${alunos}">
-								<td th:text="${aluno.id}"></td>
-								<td th:text="${aluno.nome}"></td>
+							<tr th:each="chave : ${chaves}">
+								<td th:text="${chave.id}"></td>
+								<td th:text="${chave.codigo}"></td>
 								<td>
 									<div class="btn-group pull-right">
-										<a class="btn btn-sm btn-primary" th:href="@{/aluno/alterar/{idAluno}(idAluno=${aluno.id})}">Alterar</a>
-										<a class="btn btn-sm btn-danger" th:href="@{/aluno/excluir/{idAluno}(idAluno=${aluno.id})}">Excluir</a>
+										<a class="btn btn-sm btn-primary" th:href="@{/chave/alterar/{idChave}(idChave=${chave.id})}">Alterar</a>
+										<a class="btn btn-sm btn-danger" th:href="@{/chave/excluir/{idChave}(idChave=${chave.id})}">Excluir</a>
 									</div>
 								</td>
 							</tr>
@@ -48,7 +48,7 @@
 				</div>
 			</div>
 		</div>
-		<a class="btn btn-sm btn-success" th:href="@{/aluno/cadastrar}">Cadastrar</a>
+		<a class="btn btn-sm btn-success" th:href="@{/chave/cadastrar}">Cadastrar</a>
 	</div>
 
 </body>
